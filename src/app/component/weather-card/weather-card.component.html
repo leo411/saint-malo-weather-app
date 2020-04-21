@@ -1,8 +1,21 @@
 <div class="card">
-    <ul  class="card-body" *ngFor="let foreCast of foreCasts">
-        <span>{{ foreCast.dt_txt }}</span>
-        <span>{{ foreCast.main | uppercase }}</span>
-        <span>{{ foreCast.temp_min }}</span>
-        <span>{{ foreCast.temp_max }}</span>
+    <ul  
+    class="card-body transform" 
+    *ngFor="let foreCast of foreCasts" 
+    (click)="onSelect(foreCast)" 
+    [class.selected]="foreCast=== selectedForeCast">
+        <li>{{ foreCast.dt_txt }}</li>
+        <li>{{ foreCast.main | uppercase }}</li>
+        <li>{{ foreCast.temp_min }}</li>
+        <li>{{ foreCast.temp_max }}</li>
+    </ul>
+</div>
+
+<div *ngIf="selectedForeCast">
+    <h2> {{ selectedForeCast.dt_txt }} </h2>
+    <ul class="card-detail">
+        <li>{{ selectedForeCast.main | uppercase }}</li>
+        <li>{{ selectedForeCast.temp_min }}</li>
+        <li>{{ selectedForeCast.temp_max }}</li>
     </ul>
 </div>
