@@ -1,0 +1,14 @@
+.card{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-around;
+}
+.card-body{
+    border-radius: 5px;
+    border: solid;
+    margin: 0;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

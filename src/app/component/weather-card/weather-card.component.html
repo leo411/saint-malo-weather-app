@@ -1,0 +1,8 @@
+<div class="card">
+    <ul  class="card-body" *ngFor="let foreCast of foreCasts">
+        <span>{{ foreCast.dt_txt }}</span>
+        <span>{{ foreCast.main | uppercase }}</span>
+        <span>{{ foreCast.temp_min }}</span>
+        <span>{{ foreCast.temp_max }}</span>
+    </ul>
+</div>
