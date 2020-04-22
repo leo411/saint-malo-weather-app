@@ -11,11 +11,4 @@
     </ul>
 </div>
 
-<div *ngIf="selectedForeCast">
-    <h2> {{ selectedForeCast.dt_txt }} </h2>
-    <ul class="card-detail">
-        <li>{{ selectedForeCast.main | uppercase }}</li>
-        <li>{{ selectedForeCast.temp_min }}</li>
-        <li>{{ selectedForeCast.temp_max }}</li>
-    </ul>
-</div>
+<app-weather-card-details [foreCast]="selectedForeCast"></app-weather-card-details>
