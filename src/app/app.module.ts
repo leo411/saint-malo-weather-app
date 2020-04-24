@@ -6,12 +6,14 @@ import { HttpClientModule }    from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import { WeatherCardDetailsComponent } from './components/weather-card-details/weather-card-details.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherCardComponent,
-    WeatherCardDetailsComponent
+    WeatherCardDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
