@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherPoint } from 'src/forecast';
+import { WeatherPoint, PointFromServer } from 'src/forecast';
 import { ForecastService } from 'src/app/service/forecast.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/internal/operators/map';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+registerLocaleData(localeFr, 'fr');
 
 
 @Component({
@@ -9,7 +14,7 @@ import { ForecastService } from 'src/app/service/forecast.service';
   styleUrls: ['./weather-card.component.css']
 })
 export class WeatherCardComponent implements OnInit {
-  foreCasts: WeatherPoint[]
+  foreCasts$: Observable<WeatherPoint[]>
   selectedForeCast: WeatherPoint
 
   constructor(private forecastService: ForecastService) { }
@@ -23,6 +28,8 @@ export class WeatherCardComponent implements OnInit {
   };
 
   getForecasts(): void {
-    this.forecastService.getForeCasts().subscribe(foreCasts => this.foreCasts = foreCasts);
+    this.foreCasts$ = this.forecastService.getForeCasts().pipe(
+      map(weatherPointArray => weatherPointArray.filter(singlePoint => singlePoint.dt_txt.endsWith('12:00:00')))
+    )
   }
 }

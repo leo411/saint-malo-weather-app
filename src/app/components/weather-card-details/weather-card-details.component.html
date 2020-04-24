@@ -1,8 +1,11 @@
 <div *ngIf="foreCast">
-    <h2> {{ foreCast.dt_txt }} </h2>
+    <h2> <strong>{{ foreCast.dt_txt | date:'EEEE dd LLLL':'+0200':'fr'}}</strong></h2>
     <ul class="card-detail">
-        <li>{{ foreCast.main | uppercase }}</li>
-        <li>{{ foreCast.temp_min }}</li>
-        <li>{{ foreCast.temp_max }}</li>
+        <li>à {{ foreCast.dt_txt | date:'hh'}}h</li>
+        <img
+        src="/assets/{{foreCast.icon}}.png"
+        alt="icon meteo"
+        />
+        <li>{{ foreCast.temp_min | number:'1.0-0'}} °</li>
     </ul>
 </div>

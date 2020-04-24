@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { WeatherPoint } from 'src/forecast';
+import { WeatherPoint, PointFromServer } from 'src/forecast';
 
 @Component({
   selector: 'app-weather-card-details',

@@ -9,7 +9,6 @@ export const foreCasts: WeatherPoint[] = [
 ].map(foreCasts => ({
     temp_min: foreCasts.temp_min,
     temp_max: foreCasts.temp_max,
-    main: foreCasts.main,
     icon: foreCasts.icon,
     dt_txt: foreCasts.dt_txt
 }))

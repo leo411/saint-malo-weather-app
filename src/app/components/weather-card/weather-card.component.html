@@ -1,13 +1,18 @@
 <div class="card">
     <ul  
     class="card-body transform" 
-    *ngFor="let foreCast of foreCasts" 
+    *ngFor="let foreCast of (foreCasts$ | async)" 
     (click)="onSelect(foreCast)" 
     [class.selected]="foreCast=== selectedForeCast">
-        <li>{{ foreCast.dt_txt }}</li>
-        <li>{{ foreCast.main | uppercase }}</li>
-        <li>{{ foreCast.temp_min }}</li>
-        <li>{{ foreCast.temp_max }}</li>
+        <li><strong>{{ foreCast.dt_txt | date:'EEEE dd LLLL':'+0200':'fr'}}</strong></li>
+        <li>à {{ foreCast.dt_txt | date:'hh'}}h</li>
+        <li>
+            <img
+            src="/assets/{{foreCast.icon}}.png"
+            alt="icon meteo"
+            />
+        </li>
+        <li>{{ foreCast.temp_min | number:'1.0-0'}} °</li>
     </ul>
 </div>
 
