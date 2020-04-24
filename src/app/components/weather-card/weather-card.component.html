@@ -20,5 +20,7 @@ class="card"
 
 <app-weather-card-details 
     *ngIf="selectedForeCast" 
-    [selectedDate]="selectedForeCast.dt_txt">
+    [selectedDate]="selectedForeCast.dt_txt"
+    (notify)="onNotify()">
+    
 </app-weather-card-details>

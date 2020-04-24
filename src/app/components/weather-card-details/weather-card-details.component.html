@@ -1,6 +1,12 @@
+<button 
+    class="button transform"
+    (click)="notify.emit()">
+<strong>Retour</strong>
+</button>
 <div *ngIf="selectedDate" class ="cardDetail">
+    
     <ul 
-    class="cardDetails-body"
+    class="cardDetails-body transform"
     *ngFor="let foreCast of (foreCast$ | async)" >
         <li><strong>{{ foreCast.dt_txt | date:'EEEE dd LLLL':'+0200':'fr'}}</strong></li>
         <li>à {{ foreCast.dt_txt | date:'HH'}}h</li>

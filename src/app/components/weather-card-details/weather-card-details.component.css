@@ -15,3 +15,21 @@ li{
     flex-direction: column;
     flex-wrap: wrap;
 }
+.button{
+    border-radius: 5px;
+    font-size: medium;
+    padding: 8px;
+    margin-bottom: 1em;
+    cursor: pointer;
+}
+.button:hover {
+    text-decoration: underline;
+}
+.transform {
+    transform: scale(1);
+    transition-property: all;
+    transition-duration: 0.3s;
+}
+.transform:hover {
+    transform: scale(1.04);
+}

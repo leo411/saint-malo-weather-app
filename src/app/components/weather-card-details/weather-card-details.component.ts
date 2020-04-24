@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherPoint } from 'src/forecast';
 import { Observable } from 'rxjs';
 import { ForecastService } from 'src/app/service/forecast.service';
@@ -12,6 +12,7 @@ import { map } from 'rxjs/internal/operators/map';
 export class WeatherCardDetailsComponent implements OnInit {
   foreCast$: Observable<WeatherPoint[]>
   @Input() selectedDate: string
+  @Output() notify: EventEmitter<string> = new EventEmitter<string>()
 
   constructor(private forecastService: ForecastService) { }
 

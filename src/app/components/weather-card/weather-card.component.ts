@@ -27,6 +27,10 @@ export class WeatherCardComponent implements OnInit {
     this.selectedForeCast = foreCast
   };
 
+  onNotify() {
+    this.selectedForeCast = null
+  }
+  
   getForecasts(): void {
     this.foreCasts$ = this.forecastService.getForeCasts().pipe(
       map(weatherPointArray => weatherPointArray.filter(singlePoint => singlePoint.dt_txt.endsWith('12:00:00')))
