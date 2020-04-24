@@ -1,4 +1,6 @@
-<div class="card">
+<div 
+class="card"
+*ngIf="!selectedForeCast" >
     <ul  
     class="card-body transform" 
     *ngFor="let foreCast of (foreCasts$ | async)" 
@@ -16,4 +18,7 @@
     </ul>
 </div>
 
-<app-weather-card-details [foreCast]="selectedForeCast"></app-weather-card-details>
+<app-weather-card-details 
+    *ngIf="selectedForeCast" 
+    [selectedDate]="selectedForeCast.dt_txt">
+</app-weather-card-details>

@@ -15,11 +15,6 @@ li{
     flex-direction: column;
     flex-wrap: wrap;
 }
-.card-detail{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-}
 .selected{
     background-color: #b9e7fdc7;
 }

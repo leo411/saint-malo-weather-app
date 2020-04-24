@@ -1,7 +1,9 @@
-<div *ngIf="foreCast">
-    <h2> <strong>{{ foreCast.dt_txt | date:'EEEE dd LLLL':'+0200':'fr'}}</strong></h2>
-    <ul class="card-detail">
-        <li>à {{ foreCast.dt_txt | date:'hh'}}h</li>
+<div *ngIf="selectedDate" class ="cardDetail">
+    <ul 
+    class="cardDetails-body"
+    *ngFor="let foreCast of (foreCast$ | async)" >
+        <li><strong>{{ foreCast.dt_txt | date:'EEEE dd LLLL':'+0200':'fr'}}</strong></li>
+        <li>à {{ foreCast.dt_txt | date:'HH'}}h</li>
         <img
         src="/assets/{{foreCast.icon}}.png"
         alt="icon meteo"
