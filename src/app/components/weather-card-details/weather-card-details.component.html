@@ -11,7 +11,7 @@
         <li><strong>{{ foreCast.dt_txt | date:'EEEE dd LLLL':'+0200':'fr'}}</strong></li>
         <li>à {{ foreCast.dt_txt | date:'HH'}}h</li>
         <img
-        src="/assets/{{foreCast.icon}}.png"
+        src="assets/{{foreCast.icon}}.png"
         alt="icon meteo"
         />
         <li>{{ foreCast.temp_min | number:'1.0-0'}} °</li>
