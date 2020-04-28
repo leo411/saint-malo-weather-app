@@ -5,6 +5,7 @@ li{
     display: flex; 
     flex-direction: row; 
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .card-body{
     border-radius: 5px;
@@ -15,6 +16,16 @@ li{
     flex-direction: column;
     flex-wrap: wrap;
     cursor: pointer
+}
+@media (max-width: 550px) {
+    .card {
+        flex-flow: column;
+        align-items: center;
+    }
+    .card-body {
+        margin-bottom: 0.5em;
+        width: 50%;
+    }
 }
 .selected{
     background-color: #b9e7fdc7;

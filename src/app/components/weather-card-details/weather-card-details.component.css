@@ -5,6 +5,7 @@ li{
     display: flex; 
     flex-direction: row; 
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 .cardDetails-body{
     border-radius: 5px;
@@ -14,6 +15,16 @@ li{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+}
+@media (max-width: 550px) {
+    .cardDetail {
+        flex-flow: column;
+        align-items: center;
+    }
+    .cardDetails-body {
+        margin-bottom: 0.5em;
+        width: 50%;
+    }
 }
 .button{
     border-radius: 5px;
