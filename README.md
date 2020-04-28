@@ -8,17 +8,16 @@
 
 Welcome to Saint-Malo Weather-App ☀️☀️
 
-<img alt="screesnhot" src="./src/images/screenshot5proj.jpg" />
+<img alt="screesnhot" src="./src/assets/screenshotweathercard copie.jpg" />
 
 The web-app Saint-Malo weather-app is a single page angular application which give you the weather for the 5 upcoming days. When the user clicks a weather card, a detail weather 3 hours forecast is displayed.  🏖️⛵🏄
 
-<img alt="screesnhot" src="./src/assets/screenshotweathercard.jpg" />
-<img alt="screesnhot" src="./src/assets/screenshotdetailledweathercard.jpg" />
+<img alt="screesnhot" src="./src/assets/screenshotdetailledweathercard copie.jpg" />
 
 ## This app uses 🍁🍁
 
 1.  **Angular**
-    <img alt="logoAngular" src="./src/assets/Angular_logo.svg.png" />
+    <img alt="logoAngular" src="./src/assets/Angular_logo.svg copie.png" />
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
