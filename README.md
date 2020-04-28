@@ -1,27 +1,40 @@
-# SaintMaloApp
+<p align="center">
+    <img alt="logoweatherapp" src="./src/assets/logo-bateau.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Saint-Malo Weather-App
+</h1>
+
+Welcome to Saint-Malo Weather-App ☀️☀️
+
+<img alt="screesnhot" src="./src/images/screenshot5proj.jpg" />
+
+The web-app Saint-Malo weather-app is a single page angular application which give you the weather for the 5 upcoming days. When the user clicks a weather card, a detail weather 3 hours forecast is displayed.  🏖️⛵🏄
+
+<img alt="screesnhot" src="./src/assets/screenshotweathercard.jpg" />
+<img alt="screesnhot" src="./src/assets/screenshotdetailledweathercard.jpg" />
+
+## This app uses 🍁🍁
+
+1.  **Angular**
+    <img alt="logoAngular" src="./src/assets/Angular_logo.svg.png" />
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
-## Development server
+The codebase is organised into three simple components `Weather-card`, `Weather-card-detail`, and `Header`.
+`Weather-card` displays the weather for the 5 upcoming days.
+`Weather-card-detail` displays the detailed weather, 3 hours forecast of the selected day. It takes one prop `selectedDate`.
+`Header` displays the header of the website which is made from an image and 3 headers. It takes one prop `selectedTimeRange`.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+All type for the app are organised under the `forecast.ts`file in the `src` folder.
 
-## Code scaffolding
+The data are retrieved from [OpenWeatherMap](https://openweathermap.org/). The API [5day/3hours](https://openweathermap.org/forecast5) forecast has been used for this project. It is the `forecast-service` which provide the shared data accross the 2 components which need it `Weather-card` and `Weather-card-detail` for display.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Get started 🚀🚀
 
-## Build
+To run this project :
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### `npm start`
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+### `npm run build`
