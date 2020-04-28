@@ -8,11 +8,11 @@
 
 Welcome to Saint-Malo Weather-App ☀️☀️
 
-<img alt="screesnhot" src="./src/assets/screenshotweathercard copie.jpg" />
+<img  align="center" alt="screesnhot" src="./src/assets/screenshotweathercard copie.jpg" />
 
 The web-app Saint-Malo weather-app is a single page angular application which give you the weather for the 5 upcoming days. When the user clicks a weather card, a detail weather 3 hours forecast is displayed.  🏖️⛵🏄
 
-<img alt="screesnhot" src="./src/assets/screenshotdetailledweathercard copie.jpg" />
+<img  align="center" alt="screesnhot" src="./src/assets/screenshotdetailledweathercard copie.jpg" />
 
 ## This app uses 🍁🍁
 
