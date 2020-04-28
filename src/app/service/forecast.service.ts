@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, take, tap } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
+import { map, take, tap, catchError } from 'rxjs/operators';
 
 import { WeatherPoint, ServerData } from 'src/forecast';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -21,7 +21,18 @@ export class ForecastService {
           temp_max: forcast.main.temp_max,
           icon: forcast.weather[0].icon,
           dt_txt: forcast.dt_txt
-        })))
+        }))),
+        catchError(this.handleError)
       )
   }
+  handleError(err: any){
+    let errorMessage: string
+    if (err.errorMessage instanceof ErrorEvent) {
+      errorMessage = `An error occured: ${err.errorMessage}`;
+    } else {
+      errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
+    }
+    console.error(err);
+    return throwError(errorMessage);
+    }
 }

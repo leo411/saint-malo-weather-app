@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { WeatherPoint } from 'src/forecast';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import { ForecastService } from 'src/app/service/forecast.service';
 import { map } from 'rxjs/internal/operators/map';
+import { catchError } from 'rxjs/operators';
 
 @Component({
   selector: 'app-weather-card-details',
@@ -13,6 +14,7 @@ export class WeatherCardDetailsComponent implements OnInit {
   foreCast$: Observable<WeatherPoint[]>
   @Input() selectedDate: string
   @Output() notify: EventEmitter<string> = new EventEmitter<string>()
+  errorMessage: string
 
   constructor(private forecastService: ForecastService) { }
 
@@ -21,11 +23,15 @@ export class WeatherCardDetailsComponent implements OnInit {
   }
 
   getDetailedForecasts(): void {
-    this.foreCast$ = this.forecastService.getForeCasts().pipe(
+    this.foreCast$ = this.forecastService.getForeCasts()
+    .pipe(
       map(weatherPointArray => weatherPointArray.filter(singlePoint => {
-        console.log('selected', this.selectedDate.slice(0,10))
         return singlePoint.dt_txt.slice(0,10) === this.selectedDate.slice(0,10)
-      }))
+      })),
+      catchError(err => {
+        this.errorMessage = err;
+        return EMPTY 
+      })
     )
   }
 

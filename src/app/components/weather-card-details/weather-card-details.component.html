@@ -3,8 +3,8 @@
     (click)="notify.emit()">
 <strong>Retour</strong>
 </button>
+<div>{{errorMessage}}</div>
 <div *ngIf="selectedDate" class ="cardDetail">
-    
     <ul 
     class="cardDetails-body transform"
     *ngFor="let foreCast of (foreCast$ | async)" >

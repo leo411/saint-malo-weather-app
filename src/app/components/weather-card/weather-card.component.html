@@ -1,4 +1,5 @@
 <app-header [selectedTimeRange]="selectedForeCast ? 'day' : 'week'"></app-header>
+<div>{{errorMessage}}</div>
 <div 
 class="card"
 *ngIf="!selectedForeCast" >
